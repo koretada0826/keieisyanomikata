@@ -1057,9 +1057,9 @@ export default function Section1() {
       <p className="fade-in text-[#1773b4] font-black mb-10 visible" style={{"textShadow": "rgba(0, 0, 0, 0.9) 0px 1px 8px", "fontSize": "clamp(13px, 4vw, 20px)"}}><span className="whitespace-nowrap">現状の営業コストと比較した</span><br className="sm:hidden" /><span className="whitespace-nowrap">"削減インパクト"をその場で算出します</span>
       </p>
       <div className="fade-in flex flex-col sm:flex-row gap-3 justify-center visible">
-      <a href="#contact-form" className="btn-accent text-center">まずは10〜15分だけ話しましょう
+      <a href="#contact-form" className="inline-flex items-center justify-center bg-[#1773b4] hover:bg-[#0e5a92] text-white font-bold text-[15px] sm:text-[17px] px-8 sm:px-10 py-4 sm:py-5 rounded-full no-underline transition-colors shadow-[0_8px_24px_rgba(0,0,0,0.5)]">まずは10〜15分だけ話しましょう
       </a>
-      <a href="#document-request" className="btn-primary text-center !text-white" style={{"boxShadow": "rgba(0, 0, 0, 0.55) 0px 4px 18px, rgba(255, 255, 255, 0.18) 0px 0px 0px 2px"}}>資料請求
+      <a href="#document-request" className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-sm border-2 border-white text-white font-bold text-[15px] sm:text-[17px] px-8 sm:px-10 py-4 sm:py-5 rounded-full no-underline transition-colors">資料請求
       </a>
       </div>
       </div>

@@ -12,3 +12,41 @@ body {
 img, svg, video {
   max-width: 100%;
 }
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1773b4;
+  color: #fff;
+  font-weight: 800;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  border: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-accent:hover {
+  background-color: #0e5a92;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #1773b4;
+  font-weight: 800;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  border: 2px solid #1773b4;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background-color: #eaf3fa;
+}
