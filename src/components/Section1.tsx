@@ -677,36 +677,31 @@ export default function Section1() {
       <div className="fade-in bg-white border-2 border-black p-5 sm:p-6 text-center visible" style={{"boxShadow": "rgba(0, 0, 0, 0.1) 4px 4px 0px 0px", "transitionDelay": "0s"}}><span className="inline-flex w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full bg-black items-center justify-center text-[#1773b4] text-[14px] sm:text-[15px] font-black mb-3">01</span>
       <p className="text-[26px] sm:text-[20px] font-black text-black mb-3">残業したくない
       </p>
-      <p className="text-[18px] sm:text-[15px] text-[#888] leading-[1.7] whitespace-pre-line font-medium">定時後の稼働を嫌がる
-      ワークライフバランス重視
+      <p className="text-[15px] sm:text-[15px] text-[#888] leading-[1.7] font-medium">定時後の稼働を嫌がる<br />ワークライフバランス重視
       </p>
       </div>
       <div className="fade-in bg-white border-2 border-black p-5 sm:p-6 text-center visible" style={{"boxShadow": "rgba(0, 0, 0, 0.1) 4px 4px 0px 0px", "transitionDelay": "0.06s"}}><span className="inline-flex w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full bg-black items-center justify-center text-[#1773b4] text-[14px] sm:text-[15px] font-black mb-3">02</span>
       <p className="text-[26px] sm:text-[20px] font-black text-black mb-3">電話がしんどい
       </p>
-      <p className="text-[18px] sm:text-[15px] text-[#888] leading-[1.7] whitespace-pre-line font-medium">電話営業のストレス
-      断られることへの恐怖心
+      <p className="text-[15px] sm:text-[15px] text-[#888] leading-[1.7] font-medium">電話営業のストレス<br />断られることへの恐怖心
       </p>
       </div>
       <div className="fade-in bg-white border-2 border-black p-5 sm:p-6 text-center visible" style={{"boxShadow": "rgba(0, 0, 0, 0.1) 4px 4px 0px 0px", "transitionDelay": "0.12s"}}><span className="inline-flex w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full bg-black items-center justify-center text-[#1773b4] text-[14px] sm:text-[15px] font-black mb-3">03</span>
       <p className="text-[26px] sm:text-[20px] font-black text-black mb-3">人間関係の摩擦
       </p>
-      <p className="text-[18px] sm:text-[15px] text-[#888] leading-[1.7] whitespace-pre-line font-medium">チーム内の衝突
-      上司とのコミュ不全
+      <p className="text-[15px] sm:text-[15px] text-[#888] leading-[1.7] font-medium">チーム内の衝突<br />上司とのコミュ不全
       </p>
       </div>
       <div className="fade-in bg-white border-2 border-black p-5 sm:p-6 text-center visible" style={{"boxShadow": "rgba(0, 0, 0, 0.1) 4px 4px 0px 0px", "transitionDelay": "0.18s"}}><span className="inline-flex w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full bg-black items-center justify-center text-[#1773b4] text-[14px] sm:text-[15px] font-black mb-3">04</span>
       <p className="text-[26px] sm:text-[20px] font-black text-black mb-3">モチベの波
       </p>
-      <p className="text-[18px] sm:text-[15px] text-[#888] leading-[1.7] whitespace-pre-line font-medium">やる気の浮き沈みが激しく
-      安定した成果が出ない
+      <p className="text-[15px] sm:text-[15px] text-[#888] leading-[1.7] font-medium">やる気の浮き沈みが激しく<br />安定した成果が出ない
       </p>
       </div>
       <div className="fade-in bg-white border-2 border-black p-5 sm:p-6 text-center visible" style={{"boxShadow": "rgba(0, 0, 0, 0.1) 4px 4px 0px 0px", "transitionDelay": "0.24s"}}><span className="inline-flex w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full bg-black items-center justify-center text-[#1773b4] text-[14px] sm:text-[15px] font-black mb-3">05</span>
       <p className="text-[26px] sm:text-[20px] font-black text-black mb-3">突然の離職
       </p>
-      <p className="text-[18px] sm:text-[15px] text-[#888] leading-[1.7] whitespace-pre-line font-medium">予告なしの退職
-      採用・教育コストが無駄に
+      <p className="text-[15px] sm:text-[15px] text-[#888] leading-[1.7] font-medium">予告なしの退職<br />採用・教育コストが無駄に
       </p>
       </div>
       </div>
