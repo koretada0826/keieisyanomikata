@@ -1035,7 +1035,7 @@ export default function Section1() {
       </div>
       <div className="mb-6">
       <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">ご質問・ご要望<span className="text-[10px] font-bold text-[#999] bg-[#eee] px-1.5 py-[1px] rounded-[3px]">任意</span>
-      </label><textarea rows="4" placeholder="導入時期・想定コール数・課題など、お気軽にご記入ください" className="w-full px-4 py-3 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#1773b4] focus:bg-white transition-colors placeholder:text-[#ccc] resize-none" style={{"caretColor": "transparent !important"}}></textarea>
+      </label><textarea rows={4} placeholder="導入時期・想定コール数・課題など、お気軽にご記入ください" className="w-full px-4 py-3 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#1773b4] focus:bg-white transition-colors placeholder:text-[#ccc] resize-none" style={{"caretColor": "transparent !important"}}></textarea>
       </div>
       <button type="submit" className="btn-accent w-full text-center cursor-pointer text-[14px]">資料を受け取る
       </button>
