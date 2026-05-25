@@ -10,7 +10,7 @@ export default function Section1() {
       </div>
       <div className="relative z-10 max-w-[1240px] mx-auto px-5 sm:px-8 lg:px-10 w-full">
       <div className="text-center mb-6 sm:mb-8 lg:mb-10">
-      <p className="fade-in inline-flex items-center gap-3 text-[14px] sm:text-[16px] lg:text-[18px] text-[#1773b4] tracking-[0.12em] font-black mb-4 sm:mb-6 visible"><span className="w-10 sm:w-12 h-[2px] bg-[#1773b4]"></span>営業経験15年以上のプロが設計<span className="w-10 sm:w-12 h-[2px] bg-[#1773b4]"></span>
+      <p className="fade-in inline-flex items-center gap-3 text-[14px] sm:text-[16px] lg:text-[18px] text-[#1773b4] tracking-[0.12em] font-black mb-4 sm:mb-6 visible"><span className="w-10 sm:w-12 h-[2px] bg-[#1773b4]"></span>今年で37期目の業界TOPの営業ノウハウを集約<span className="w-10 sm:w-12 h-[2px] bg-[#1773b4]"></span>
       </p>
       <h1 className="fade-in mx-auto text-black visible" style={{"fontFamily": "\"M PLUS 1p\", \"Noto Sans JP\", sans-serif", "fontWeight": "900", "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontSize": "clamp(26px, 4.5vw, 52px)"}}>結果が出ない営業代行に<br /><span className="text-[#1773b4]">もう払わなくていい。</span>
       </h1>
