@@ -10,7 +10,7 @@ export default function Section2() {
                 className="h-[40px] sm:h-[48px] w-auto mb-1"
                 src="/img/logo.png"
               />
-              <p className="text-[12px] text-[#666]">GIGUUU株式会社</p>
+              <p className="text-[12px] text-[#666]">株式会社Bright</p>
             </div>
             <nav className="flex flex-wrap gap-5">
               <a
@@ -47,7 +47,7 @@ export default function Section2() {
           </div>
           <div className="border-t border-[#e5e5e5] pt-6">
             <p className="text-[10px] text-[#999]">
-              © GIGUUU Inc. All Rights Reserved.
+              © Bright Inc. All Rights Reserved.
             </p>
           </div>
         </div>
