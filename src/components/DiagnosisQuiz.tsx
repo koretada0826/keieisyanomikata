@@ -34,14 +34,51 @@ const QUESTIONS: Question[] = [
   },
 ];
 
-const TOTAL = QUESTIONS.length;
+const QCOUNT = QUESTIONS.length; // 6
+const FORM_STEPS = 2; // 入力2ステップ
+const TOTAL = QCOUNT + FORM_STEPS; // 8
+const STEP_PROFILE = QCOUNT; // step index 6
+const STEP_CONTACT = QCOUNT + 1; // step index 7
+const STEP_DONE = TOTAL; // step index 8
+
+const inputClass =
+  "w-full px-4 py-3.5 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#1773b4] focus:bg-white transition-colors placeholder:text-[#ccc]";
+
+const requiredBadge = (
+  <span className="text-[10px] font-bold text-white bg-[#1773b4] px-1.5 py-[1px] rounded-[3px]">
+    必須
+  </span>
+);
+const optionalBadge = (
+  <span className="text-[10px] font-bold text-[#999] bg-[#eee] px-1.5 py-[1px] rounded-[3px]">
+    任意
+  </span>
+);
+
+type FormState = {
+  name: string;
+  company: string;
+  dept: string;
+  phone: string;
+  email: string;
+  message: string;
+};
+
+const EMPTY_FORM: FormState = {
+  name: "",
+  company: "",
+  dept: "",
+  phone: "",
+  email: "",
+  message: "",
+};
 
 export default function DiagnosisQuiz() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
-  const done = step >= TOTAL;
+  const [form, setForm] = useState<FormState>(EMPTY_FORM);
 
-  const select = (option: string) => {
+  const selectAnswer = (option: string) => {
     setAnswers((prev) => {
       const next = [...prev];
       next[step] = option;
@@ -51,24 +88,34 @@ export default function DiagnosisQuiz() {
   };
 
   const back = () => setStep((s) => Math.max(0, s - 1));
+  const setField = (key: keyof FormState, value: string) =>
+    setForm((f) => ({ ...f, [key]: value }));
 
-  const scrollToForm = () => {
-    document
-      .getElementById("document-request")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const reset = () => {
+    setAnswers([]);
+    setForm(EMPTY_FORM);
+    setStep(0);
   };
 
-  const current = QUESTIONS[step];
-  const progress = done ? 100 : ((step + 1) / TOTAL) * 100;
+  const profileValid = form.name.trim() !== "" && form.company.trim() !== "";
+  const contactValid = form.phone.trim() !== "" && form.email.trim() !== "";
+
+  const submit = () => {
+    if (!contactValid) return;
+    // 送信処理（バックエンド連携は別途）。ここでは完了画面を表示。
+    setStep(STEP_DONE);
+  };
+
+  const progress = ((Math.min(step, TOTAL) + (step >= STEP_DONE ? 0 : 1)) / TOTAL) * 100;
+  const stepLabel =
+    step >= STEP_DONE ? "完了" : `STEP ${step + 1} / ${TOTAL}`;
 
   return (
     <>
       {/* progress */}
       <div className="fade-in mb-8 visible">
         <div className="flex items-center justify-between mb-1.5">
-          <p className="text-[11px] text-[#999]">
-            {done ? "完了" : `STEP ${step + 1} / ${TOTAL}`}
-          </p>
+          <p className="text-[11px] text-[#999]">{stepLabel}</p>
         </div>
         <div className="w-full h-[3px] bg-[#e5e5e5] rounded-full overflow-hidden">
           <div
@@ -78,20 +125,20 @@ export default function DiagnosisQuiz() {
         </div>
       </div>
 
-      {/* question / completion */}
-      {!done ? (
+      {/* 質問ステップ（STEP 1〜6） */}
+      {step < STEP_PROFILE && (
         <div key={step} className="step-enter step-active">
           <p className="text-[20px] sm:text-[24px] font-bold text-black leading-[1.4] mb-6">
-            {current.q}
+            {QUESTIONS[step].q}
           </p>
           <div className="space-y-2.5">
-            {current.options.map((option) => {
+            {QUESTIONS[step].options.map((option) => {
               const selected = answers[step] === option;
               return (
                 <button
                   key={option}
                   type="button"
-                  onClick={() => select(option)}
+                  onClick={() => selectAnswer(option)}
                   className={`w-full text-left px-5 py-4 rounded-[12px] border-2 text-[14px] font-medium transition-all cursor-pointer ${
                     selected
                       ? "border-[#1773b4] bg-[#eaf3fa] text-[#1773b4]"
@@ -113,7 +160,145 @@ export default function DiagnosisQuiz() {
             </button>
           )}
         </div>
-      ) : (
+      )}
+
+      {/* 入力ステップ1（STEP 7）: お名前・会社名・部署 */}
+      {step === STEP_PROFILE && (
+        <div key="profile" className="step-enter step-active">
+          <p className="text-[20px] sm:text-[24px] font-bold text-black leading-[1.4] mb-2">
+            あと少しです。お送り先を教えてください
+          </p>
+          <p className="text-[13px] text-[#999] mb-6">
+            ご回答にあわせた資料をお送りします（所要1分）。
+          </p>
+          <div className="space-y-4">
+            <div>
+              <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">
+                お名前{requiredBadge}
+              </label>
+              <input
+                type="text"
+                placeholder="例：山田 太郎"
+                value={form.name}
+                onChange={(e) => setField("name", e.target.value)}
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">
+                会社名{requiredBadge}
+              </label>
+              <input
+                type="text"
+                placeholder="例：株式会社○○○○"
+                value={form.company}
+                onChange={(e) => setField("company", e.target.value)}
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">
+                部署・役職{optionalBadge}
+              </label>
+              <input
+                type="text"
+                placeholder="例：営業部 部長"
+                value={form.dept}
+                onChange={(e) => setField("dept", e.target.value)}
+                className={inputClass}
+              />
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => profileValid && setStep(STEP_CONTACT)}
+            disabled={!profileValid}
+            className={`mt-6 w-full px-5 py-4 rounded-[12px] text-[15px] font-bold text-white transition-colors ${
+              profileValid
+                ? "bg-[#1773b4] hover:bg-[#0f5a92] cursor-pointer"
+                : "bg-[#cbd5e0] cursor-not-allowed"
+            }`}
+          >
+            次へ
+          </button>
+          <button
+            type="button"
+            onClick={back}
+            className="mt-4 text-[13px] text-[#999] hover:text-[#1773b4] transition-colors cursor-pointer"
+          >
+            ← 前にもどる
+          </button>
+        </div>
+      )}
+
+      {/* 入力ステップ2（STEP 8）: 連絡先・送信 */}
+      {step === STEP_CONTACT && (
+        <div key="contact" className="step-enter step-active">
+          <p className="text-[20px] sm:text-[24px] font-bold text-black leading-[1.4] mb-6">
+            ご連絡先を入力してください
+          </p>
+          <div className="space-y-4">
+            <div>
+              <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">
+                電話番号{requiredBadge}
+              </label>
+              <input
+                type="tel"
+                placeholder="例：09012345678"
+                value={form.phone}
+                onChange={(e) => setField("phone", e.target.value)}
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">
+                メールアドレス{requiredBadge}
+              </label>
+              <input
+                type="email"
+                placeholder="例：sample@example.com"
+                value={form.email}
+                onChange={(e) => setField("email", e.target.value)}
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">
+                ご質問・ご要望{optionalBadge}
+              </label>
+              <textarea
+                rows={3}
+                placeholder="導入時期・想定コール数・課題など、お気軽にご記入ください"
+                value={form.message}
+                onChange={(e) => setField("message", e.target.value)}
+                className={`${inputClass} resize-none`}
+              />
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={submit}
+            disabled={!contactValid}
+            className={`mt-6 w-full px-5 py-4 rounded-[12px] text-[15px] font-bold text-white transition-colors ${
+              contactValid
+                ? "bg-[#1773b4] hover:bg-[#0f5a92] cursor-pointer"
+                : "bg-[#cbd5e0] cursor-not-allowed"
+            }`}
+          >
+            資料を受け取る
+          </button>
+          <button
+            type="button"
+            onClick={back}
+            className="mt-4 text-[13px] text-[#999] hover:text-[#1773b4] transition-colors cursor-pointer"
+          >
+            ← 前にもどる
+          </button>
+        </div>
+      )}
+
+      {/* 完了画面 */}
+      {step >= STEP_DONE && (
         <div className="step-enter step-active text-center">
           <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#eaf3fa]">
             <svg
@@ -130,27 +315,17 @@ export default function DiagnosisQuiz() {
             </svg>
           </div>
           <p className="text-[20px] sm:text-[24px] font-bold text-black leading-[1.4] mb-3">
-            ご回答ありがとうございます
+            送信が完了しました
           </p>
           <p className="text-[14px] text-[#4d4d4d] leading-[1.8] mb-7">
-            いただいた内容をもとに、最適なプランと活用事例をまとめた資料を
+            ご入力ありがとうございます。担当者より、ご回答にあわせた資料を
             <br className="hidden sm:block" />
-            ご用意しています。下記フォームからお受け取りください。
+            メールにてお送りいたします。
           </p>
           <button
             type="button"
-            onClick={scrollToForm}
-            className="w-full px-5 py-4 rounded-[12px] text-[15px] font-bold text-white bg-[#1773b4] hover:bg-[#0f5a92] transition-colors cursor-pointer"
-          >
-            資料を受け取る
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setAnswers([]);
-              setStep(0);
-            }}
-            className="mt-4 text-[13px] text-[#999] hover:text-[#1773b4] transition-colors cursor-pointer"
+            onClick={reset}
+            className="text-[13px] text-[#999] hover:text-[#1773b4] transition-colors cursor-pointer"
           >
             最初からやり直す
           </button>
