@@ -73,13 +73,14 @@ const EMPTY_FORM: FormState = {
   message: "",
 };
 
-const CONTACT_EMAIL = "bright-kanri@right.ne.jp";
+const ACCESS_KEY = "674fd906-41b2-43a7-b4ba-da680df31659";
 
 export default function DiagnosisQuiz() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
-  const [mailtoHref, setMailtoHref] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const selectAnswer = (option: string) => {
     setAnswers((prev) => {
@@ -97,36 +98,56 @@ export default function DiagnosisQuiz() {
   const reset = () => {
     setAnswers([]);
     setForm(EMPTY_FORM);
+    setError("");
     setStep(0);
   };
 
   const profileValid = form.name.trim() !== "" && form.company.trim() !== "";
   const contactValid = form.phone.trim() !== "" && form.email.trim() !== "";
 
-  const submit = () => {
-    if (!contactValid) return;
-    const qaLines = QUESTIONS.map(
-      (q, i) => `${i + 1}. ${q.q}\n   → ${answers[i] ?? "（未回答）"}`
-    );
-    const body = [
-      "■ 診断の回答",
-      ...qaLines,
-      "",
-      "■ お客様情報",
-      `お名前：${form.name}`,
-      `会社名：${form.company}`,
-      `部署・役職：${form.dept || "（未記入）"}`,
-      `電話番号：${form.phone}`,
-      `メールアドレス：${form.email}`,
-      `ご質問・ご要望：${form.message || "（なし）"}`,
-    ].join("\n");
-    const subject = `【資料請求】${form.company} ${form.name} 様`;
-    const href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    setMailtoHref(href);
-    window.location.href = href;
-    setStep(STEP_DONE);
+  const submit = async () => {
+    if (!contactValid || submitting) return;
+    setSubmitting(true);
+    setError("");
+
+    const qa: Record<string, string> = {};
+    QUESTIONS.forEach((q, i) => {
+      qa[`Q${i + 1}. ${q.q}`] = answers[i] ?? "（未回答）";
+    });
+
+    const payload = {
+      access_key: ACCESS_KEY,
+      subject: `【資料請求】${form.company} ${form.name} 様`,
+      from_name: "経営者のミカタ LP",
+      お名前: form.name,
+      会社名: form.company,
+      "部署・役職": form.dept || "（未記入）",
+      電話番号: form.phone,
+      メールアドレス: form.email,
+      "ご質問・ご要望": form.message || "（なし）",
+      ...qa,
+    };
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStep(STEP_DONE);
+      } else {
+        setError("送信に失敗しました。お手数ですが時間をおいて再度お試しください。");
+      }
+    } catch {
+      setError("通信エラーが発生しました。ネットワークをご確認のうえ再度お試しください。");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const progress = ((Math.min(step, TOTAL) + (step >= STEP_DONE ? 0 : 1)) / TOTAL) * 100;
@@ -298,22 +319,26 @@ export default function DiagnosisQuiz() {
               />
             </div>
           </div>
+          {error && (
+            <p className="mt-4 text-[13px] text-[#d33] leading-[1.6]">{error}</p>
+          )}
           <button
             type="button"
             onClick={submit}
-            disabled={!contactValid}
+            disabled={!contactValid || submitting}
             className={`mt-6 w-full px-5 py-4 rounded-[12px] text-[15px] font-bold text-white transition-colors ${
-              contactValid
+              contactValid && !submitting
                 ? "bg-[#1773b4] hover:bg-[#0f5a92] cursor-pointer"
                 : "bg-[#cbd5e0] cursor-not-allowed"
             }`}
           >
-            資料を受け取る
+            {submitting ? "送信中…" : "資料を受け取る"}
           </button>
           <button
             type="button"
             onClick={back}
-            className="mt-4 text-[13px] text-[#999] hover:text-[#1773b4] transition-colors cursor-pointer"
+            disabled={submitting}
+            className="mt-4 text-[13px] text-[#999] hover:text-[#1773b4] transition-colors cursor-pointer disabled:opacity-50"
           >
             ← 前にもどる
           </button>
@@ -338,26 +363,17 @@ export default function DiagnosisQuiz() {
             </svg>
           </div>
           <p className="text-[20px] sm:text-[24px] font-bold text-black leading-[1.4] mb-3">
-            メールソフトを起動しました
+            送信が完了しました
           </p>
           <p className="text-[14px] text-[#4d4d4d] leading-[1.8] mb-7">
-            内容が入力済みのメールが開きます。そのまま
+            ご入力ありがとうございます。担当者より、ご回答にあわせた資料を
             <br className="hidden sm:block" />
-            <span className="font-bold text-black">送信</span>
-            してください。担当者より折り返しご連絡いたします。
+            メールにてお送りいたします。
           </p>
-          {mailtoHref && (
-            <a
-              href={mailtoHref}
-              className="inline-block w-full px-5 py-4 rounded-[12px] text-[15px] font-bold text-white bg-[#1773b4] hover:bg-[#0f5a92] transition-colors no-underline"
-            >
-              メールが開かない場合はこちら
-            </a>
-          )}
           <button
             type="button"
             onClick={reset}
-            className="mt-4 block w-full text-[13px] text-[#999] hover:text-[#1773b4] transition-colors cursor-pointer"
+            className="block w-full text-[13px] text-[#999] hover:text-[#1773b4] transition-colors cursor-pointer"
           >
             最初からやり直す
           </button>
