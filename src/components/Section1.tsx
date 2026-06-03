@@ -1,3 +1,5 @@
+import DiagnosisQuiz from "./DiagnosisQuiz";
+
 export default function Section1() {
   return (
       <main>
@@ -973,26 +975,7 @@ export default function Section1() {
       <h2 className="text-[24px] sm:text-[28px] font-bold text-black leading-[1.4] tracking-[0.04em]">まずは状況を教えてください
       </h2>
       </div>
-      <div className="fade-in mb-8 visible">
-      <div className="flex items-center justify-between mb-1.5">
-      <p className="text-[11px] text-[#999]">STEP 1 / 6
-      </p>
-      </div>
-      <div className="w-full h-[3px] bg-[#e5e5e5] rounded-full overflow-hidden">
-      <div className="h-full bg-[#1773b4] rounded-full transition-all duration-500" style={{"width": "16.6667%"}}>
-      </div>
-      </div>
-      </div>
-      <div className="step-enter step-active">
-      <p className="text-[20px] sm:text-[24px] font-bold text-black leading-[1.4] mb-6">コールセンターはありますか？
-      </p>
-      <div className="space-y-2.5">
-      <button className="w-full text-left px-5 py-4 rounded-[12px] border-2 text-[14px] font-medium transition-all cursor-pointer border-[#e5e5e5] bg-[#f7f7f7] text-black hover:border-[#1773b4]">はい
-      </button>
-      <button className="w-full text-left px-5 py-4 rounded-[12px] border-2 text-[14px] font-medium transition-all cursor-pointer border-[#e5e5e5] bg-[#f7f7f7] text-black hover:border-[#1773b4]">いいえ
-      </button>
-      </div>
-      </div>
+      <DiagnosisQuiz />
       </div>
       </section>
       <section id="document-request" className="py-16 sm:py-24 px-5 sm:px-10 bg-[#f7f7f7]">
