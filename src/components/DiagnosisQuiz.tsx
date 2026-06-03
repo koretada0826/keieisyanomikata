@@ -73,10 +73,13 @@ const EMPTY_FORM: FormState = {
   message: "",
 };
 
+const CONTACT_EMAIL = "bright-kanri@right.ne.jp";
+
 export default function DiagnosisQuiz() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
+  const [mailtoHref, setMailtoHref] = useState("");
 
   const selectAnswer = (option: string) => {
     setAnswers((prev) => {
@@ -102,7 +105,27 @@ export default function DiagnosisQuiz() {
 
   const submit = () => {
     if (!contactValid) return;
-    // 送信処理（バックエンド連携は別途）。ここでは完了画面を表示。
+    const qaLines = QUESTIONS.map(
+      (q, i) => `${i + 1}. ${q.q}\n   → ${answers[i] ?? "（未回答）"}`
+    );
+    const body = [
+      "■ 診断の回答",
+      ...qaLines,
+      "",
+      "■ お客様情報",
+      `お名前：${form.name}`,
+      `会社名：${form.company}`,
+      `部署・役職：${form.dept || "（未記入）"}`,
+      `電話番号：${form.phone}`,
+      `メールアドレス：${form.email}`,
+      `ご質問・ご要望：${form.message || "（なし）"}`,
+    ].join("\n");
+    const subject = `【資料請求】${form.company} ${form.name} 様`;
+    const href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    setMailtoHref(href);
+    window.location.href = href;
     setStep(STEP_DONE);
   };
 
@@ -315,17 +338,26 @@ export default function DiagnosisQuiz() {
             </svg>
           </div>
           <p className="text-[20px] sm:text-[24px] font-bold text-black leading-[1.4] mb-3">
-            送信が完了しました
+            メールソフトを起動しました
           </p>
           <p className="text-[14px] text-[#4d4d4d] leading-[1.8] mb-7">
-            ご入力ありがとうございます。担当者より、ご回答にあわせた資料を
+            内容が入力済みのメールが開きます。そのまま
             <br className="hidden sm:block" />
-            メールにてお送りいたします。
+            <span className="font-bold text-black">送信</span>
+            してください。担当者より折り返しご連絡いたします。
           </p>
+          {mailtoHref && (
+            <a
+              href={mailtoHref}
+              className="inline-block w-full px-5 py-4 rounded-[12px] text-[15px] font-bold text-white bg-[#1773b4] hover:bg-[#0f5a92] transition-colors no-underline"
+            >
+              メールが開かない場合はこちら
+            </a>
+          )}
           <button
             type="button"
             onClick={reset}
-            className="text-[13px] text-[#999] hover:text-[#1773b4] transition-colors cursor-pointer"
+            className="mt-4 block w-full text-[13px] text-[#999] hover:text-[#1773b4] transition-colors cursor-pointer"
           >
             最初からやり直す
           </button>
