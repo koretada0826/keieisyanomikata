@@ -1,4 +1,5 @@
 import DiagnosisQuiz from "./DiagnosisQuiz";
+import AudioPlayer from "./AudioPlayer";
 
 export default function Section1() {
   return (
@@ -450,6 +451,18 @@ export default function Section1() {
       <p className="text-[18px] sm:text-[26px] lg:text-[32px] font-black text-black leading-[1.4]">「<span className="text-[#1773b4]">払ったのに成果ゼロ</span>」も、<br />「<span className="text-[#1773b4]">何してるかわからない</span>」も、<br />経営者のミカタでは、<span className="text-[#1773b4]">起きません。</span>
       </p>
       </div>
+      </div>
+      </div>
+      </section>
+      <section id="demo-voice" className="py-16 sm:py-24 px-5 sm:px-10 bg-white scroll-mt-[80px]">
+      <div className="max-w-[680px] mx-auto">
+      <div className="fade-in text-center mb-8 visible">
+      <p className="text-[12px] text-[#1773b4] tracking-[0.2em] font-bold mb-3">DEMO VOICE</p>
+      <h2 className="text-[24px] sm:text-[32px] lg:text-[38px] font-black text-black leading-[1.4] tracking-[0.02em] mb-3">実際のコール音声はこんな感じです</h2>
+      <p className="text-[14px] sm:text-[16px] text-[#4d4d4d] leading-[1.9]">設計したトークツリーをもとにした、実際の受注コールの一部です。<br className="hidden sm:block" />ぜひ再生してお聴きください。</p>
+      </div>
+      <div className="fade-in visible">
+      <AudioPlayer src="/demo-call.m4a" />
       </div>
       </div>
       </section>
