@@ -1,5 +1,6 @@
 import DiagnosisQuiz from "./DiagnosisQuiz";
 import AudioPlayer from "./AudioPlayer";
+import FAQ from "./FAQ";
 
 export default function Section1() {
   return (
@@ -66,7 +67,7 @@ export default function Section1() {
       <ul className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-x-3 gap-y-2 mb-4 sm:mb-5">
       <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-white/90"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>全ログ開示
       </li>
-      <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-white/90"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>月額35万円・初期費用0円
+      <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-white/90"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>月額35万円
       </li>
       <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-white/90"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>8,800コール
       </li>
@@ -669,7 +670,7 @@ export default function Section1() {
       <div className="grid grid-cols-2 gap-20 sm:gap-32 items-center py-3 border-b border-[#f0f0f0] last:border-0"><span className="text-[20px] sm:text-[24px] font-bold text-[#888] text-right">離職リスク</span><span className="text-[21px] sm:text-[25px] font-black text-left text-[#1773b4]">✓ なし</span>
       </div>
       </div>
-      <div className="bg-[#eaf3fa] px-6 py-4 border-t border-[#cfe4f3] text-center"><span className="text-[14px] font-bold text-[#888]">月額総コスト：</span><span className="text-[28px] sm:text-[32px] font-black text-[#1773b4] ml-2" style={{"fontFamily": "\"M PLUS 1p\", sans-serif"}}>35万円</span><span className="text-[13px] text-[#888] ml-1">（初期費用0円・全部込み）</span>
+      <div className="bg-[#eaf3fa] px-6 py-4 border-t border-[#cfe4f3] text-center"><span className="text-[14px] font-bold text-[#888]">月額総コスト：</span><span className="text-[28px] sm:text-[32px] font-black text-[#1773b4] ml-2" style={{"fontFamily": "\"M PLUS 1p\", sans-serif"}}>35万円</span><span className="text-[13px] text-[#888] ml-1">（別途 初期費用20万円）</span>
       </div>
       </div>
       </div>
@@ -816,104 +817,7 @@ export default function Section1() {
       </h2>
       <p className="fade-in text-[#4d4d4d] text-center mb-12 whitespace-nowrap visible" style={{"fontSize": "clamp(12px, 3.6vw, 16px)"}}>経営者のミカタについて、よくいただくご質問をまとめました。
       </p>
-      <div className="max-w-[860px] mx-auto">
-      <div className="fade-in border-b border-[#eee] visible" style={{"transitionDelay": "0s"}}>
-      <button className="w-full flex items-center justify-between py-5 sm:py-6 text-left cursor-pointer bg-transparent border-none">
-      <div className="flex items-start gap-3 sm:gap-4 pr-4"><span className="text-[15px] sm:text-[16px] font-black text-[#1773b4] mt-0.5 shrink-0">Q.</span><span className="text-[15px] sm:text-[17px] font-bold text-black leading-[1.5]">本当に月間8,800コールされますか？</span>
-      </div><span className="text-[20px] text-[#1773b4] shrink-0 transition-transform duration-300" style={{"transform": "rotate(0deg)"}}>+</span>
-      </button>
-      <div className="overflow-hidden transition-all duration-300" style={{"maxHeight": "0px", "opacity": "0"}}>
-      <div className="flex items-start gap-3 sm:gap-4 pb-5 sm:pb-6 pl-0"><span className="text-[15px] sm:text-[16px] font-black text-[#999] mt-0.5 shrink-0">A.</span>
-      <p className="text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.8]">はい、8,800コールを保証しています。人で換算すると約2人分の稼働量です（※人の場合：200コール/日 × 22日 = 約4,400コール）。毎日のコール数はリアルタイムで共有されるため、進捗をいつでも確認できます。万が一、月間コール数が保証に満たなかった場合は翌月に繰り越し対応いたします。
-      </p>
-      </div>
-      </div>
-      </div>
-      <div className="fade-in border-b border-[#eee] visible" style={{"transitionDelay": "0.05s"}}>
-      <button className="w-full flex items-center justify-between py-5 sm:py-6 text-left cursor-pointer bg-transparent border-none">
-      <div className="flex items-start gap-3 sm:gap-4 pr-4"><span className="text-[15px] sm:text-[16px] font-black text-[#1773b4] mt-0.5 shrink-0">Q.</span><span className="text-[15px] sm:text-[17px] font-bold text-black leading-[1.5]">どんな業種に対応していますか？</span>
-      </div><span className="text-[20px] text-[#1773b4] shrink-0 transition-transform duration-300" style={{"transform": "rotate(0deg)"}}>+</span>
-      </button>
-      <div className="overflow-hidden transition-all duration-300" style={{"maxHeight": "0px", "opacity": "0"}}>
-      <div className="flex items-start gap-3 sm:gap-4 pb-5 sm:pb-6 pl-0"><span className="text-[15px] sm:text-[16px] font-black text-[#999] mt-0.5 shrink-0">A.</span>
-      <p className="text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.8]">BtoB商材なら基本的に全業種対応可能。IT・SaaS、人材、不動産、製造業など幅広い実績があります。初回ヒアリングで最適なアプローチを設計します。
-      </p>
-      </div>
-      </div>
-      </div>
-      <div className="fade-in border-b border-[#eee] visible" style={{"transitionDelay": "0.1s"}}>
-      <button className="w-full flex items-center justify-between py-5 sm:py-6 text-left cursor-pointer bg-transparent border-none">
-      <div className="flex items-start gap-3 sm:gap-4 pr-4"><span className="text-[15px] sm:text-[16px] font-black text-[#1773b4] mt-0.5 shrink-0">Q.</span><span className="text-[15px] sm:text-[17px] font-bold text-black leading-[1.5]">トークスクリプトは誰がどうやって作りますか？</span>
-      </div><span className="text-[20px] text-[#1773b4] shrink-0 transition-transform duration-300" style={{"transform": "rotate(0deg)"}}>+</span>
-      </button>
-      <div className="overflow-hidden transition-all duration-300" style={{"maxHeight": "0px", "opacity": "0"}}>
-      <div className="flex items-start gap-3 sm:gap-4 pb-5 sm:pb-6 pl-0"><span className="text-[15px] sm:text-[16px] font-black text-[#999] mt-0.5 shrink-0">A.</span>
-      <p className="text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.8]">営業経験15年以上のプロが、貴社の商材・ターゲットに合わせてトークツリーを設計します。営業のプロレベルの無駄のない会話構成に、トップ営業マンの間・語尾・テンションを組み合わせた設計思想です。作成費用は月額料金に含まれており、運用データをもとに継続的に改善していきます。
-      </p>
-      </div>
-      </div>
-      </div>
-      <div className="fade-in border-b border-[#eee] visible" style={{"transitionDelay": "0.15s"}}>
-      <button className="w-full flex items-center justify-between py-5 sm:py-6 text-left cursor-pointer bg-transparent border-none">
-      <div className="flex items-start gap-3 sm:gap-4 pr-4"><span className="text-[15px] sm:text-[16px] font-black text-[#1773b4] mt-0.5 shrink-0">Q.</span><span className="text-[15px] sm:text-[17px] font-bold text-black leading-[1.5]">契約期間はどのくらいですか？</span>
-      </div><span className="text-[20px] text-[#1773b4] shrink-0 transition-transform duration-300" style={{"transform": "rotate(0deg)"}}>+</span>
-      </button>
-      <div className="overflow-hidden transition-all duration-300" style={{"maxHeight": "0px", "opacity": "0"}}>
-      <div className="flex items-start gap-3 sm:gap-4 pb-5 sm:pb-6 pl-0"><span className="text-[15px] sm:text-[16px] font-black text-[#999] mt-0.5 shrink-0">A.</span>
-      <p className="text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.8]">初期契約は6ヶ月間です。以降は6ヶ月単位での自動更新となります。成果を出すにはPDCAを回す期間が必要なため、この設計にしています。
-      </p>
-      </div>
-      </div>
-      </div>
-      <div className="fade-in border-b border-[#eee] visible" style={{"transitionDelay": "0.2s"}}>
-      <button className="w-full flex items-center justify-between py-5 sm:py-6 text-left cursor-pointer bg-transparent border-none">
-      <div className="flex items-start gap-3 sm:gap-4 pr-4"><span className="text-[15px] sm:text-[16px] font-black text-[#1773b4] mt-0.5 shrink-0">Q.</span><span className="text-[15px] sm:text-[17px] font-bold text-black leading-[1.5]">初期費用はかかりますか？</span>
-      </div><span className="text-[20px] text-[#1773b4] shrink-0 transition-transform duration-300" style={{"transform": "rotate(0deg)"}}>+</span>
-      </button>
-      <div className="overflow-hidden transition-all duration-300" style={{"maxHeight": "0px", "opacity": "0"}}>
-      <div className="flex items-start gap-3 sm:gap-4 pb-5 sm:pb-6 pl-0"><span className="text-[15px] sm:text-[16px] font-black text-[#999] mt-0.5 shrink-0">A.</span>
-      <p className="text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.8]">初期費用は一切かかりません。トークツリー設計・ターゲットリスト作成・専任担当者の配置まで、すべて月額料金に含まれています。月額の詳細はお問い合わせ時にご案内いたします。
-      </p>
-      </div>
-      </div>
-      </div>
-      <div className="fade-in border-b border-[#eee] visible" style={{"transitionDelay": "0.25s"}}>
-      <button className="w-full flex items-center justify-between py-5 sm:py-6 text-left cursor-pointer bg-transparent border-none">
-      <div className="flex items-start gap-3 sm:gap-4 pr-4"><span className="text-[15px] sm:text-[16px] font-black text-[#1773b4] mt-0.5 shrink-0">Q.</span><span className="text-[15px] sm:text-[17px] font-bold text-black leading-[1.5]">人の営業と比べてどのくらいコスト削減できますか？</span>
-      </div><span className="text-[20px] text-[#1773b4] shrink-0 transition-transform duration-300" style={{"transform": "rotate(0deg)"}}>+</span>
-      </button>
-      <div className="overflow-hidden transition-all duration-300" style={{"maxHeight": "0px", "opacity": "0"}}>
-      <div className="flex items-start gap-3 sm:gap-4 pb-5 sm:pb-6 pl-0"><span className="text-[15px] sm:text-[16px] font-black text-[#999] mt-0.5 shrink-0">A.</span>
-      <p className="text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.8]">人を雇う場合、給与だけでなく社会保険（約15%）・交通費（約1万円/月）・残業/有給コスト（約10%増）・教育コスト・管理コストがかかります。さらに最大のリスクは離職です。経営者のミカタなら離職なし・教育不要・パフォーマンス一定で、営業2人分の稼働を実現します。具体的な月額はお問い合わせ時にご案内いたします。
-      </p>
-      </div>
-      </div>
-      </div>
-      <div className="fade-in border-b border-[#eee] visible" style={{"transitionDelay": "0.3s"}}>
-      <button className="w-full flex items-center justify-between py-5 sm:py-6 text-left cursor-pointer bg-transparent border-none">
-      <div className="flex items-start gap-3 sm:gap-4 pr-4"><span className="text-[15px] sm:text-[16px] font-black text-[#1773b4] mt-0.5 shrink-0">Q.</span><span className="text-[15px] sm:text-[17px] font-bold text-black leading-[1.5]">どのくらいで成果が出ますか？</span>
-      </div><span className="text-[20px] text-[#1773b4] shrink-0 transition-transform duration-300" style={{"transform": "rotate(0deg)"}}>+</span>
-      </button>
-      <div className="overflow-hidden transition-all duration-300" style={{"maxHeight": "0px", "opacity": "0"}}>
-      <div className="flex items-start gap-3 sm:gap-4 pb-5 sm:pb-6 pl-0"><span className="text-[15px] sm:text-[16px] font-black text-[#999] mt-0.5 shrink-0">A.</span>
-      <p className="text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.8]">業種やターゲットによりますが、多くの場合1〜2週間で最初のアポイントが発生しています。月間8,800コールの実行量があるため、短期間でPDCAを回すことが可能です。
-      </p>
-      </div>
-      </div>
-      </div>
-      <div className="fade-in border-b border-[#eee] visible" style={{"transitionDelay": "0.35s"}}>
-      <button className="w-full flex items-center justify-between py-5 sm:py-6 text-left cursor-pointer bg-transparent border-none">
-      <div className="flex items-start gap-3 sm:gap-4 pr-4"><span className="text-[15px] sm:text-[16px] font-black text-[#1773b4] mt-0.5 shrink-0">Q.</span><span className="text-[15px] sm:text-[17px] font-bold text-black leading-[1.5]">途中でスクリプトやターゲットの変更はできますか？</span>
-      </div><span className="text-[20px] text-[#1773b4] shrink-0 transition-transform duration-300" style={{"transform": "rotate(0deg)"}}>+</span>
-      </button>
-      <div className="overflow-hidden transition-all duration-300" style={{"maxHeight": "0px", "opacity": "0"}}>
-      <div className="flex items-start gap-3 sm:gap-4 pb-5 sm:pb-6 pl-0"><span className="text-[15px] sm:text-[16px] font-black text-[#999] mt-0.5 shrink-0">A.</span>
-      <p className="text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.8]">はい、いつでも変更可能です。コールデータの分析結果をもとに、トークツリーやターゲットリストの最適化を提案させていただきます。追加費用はかかりません。
-      </p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <FAQ />
       <div className="fade-in text-center mt-12 visible">
       <p className="text-[14px] text-[#999] mb-4">その他のご質問は、お気軽にお問い合わせください。
       </p>
