@@ -670,7 +670,7 @@ export default function Section1() {
       <div className="grid grid-cols-2 gap-20 sm:gap-32 items-center py-3 border-b border-[#f0f0f0] last:border-0"><span className="text-[20px] sm:text-[24px] font-bold text-[#888] text-right">離職リスク</span><span className="text-[21px] sm:text-[25px] font-black text-left text-[#1773b4]">✓ なし</span>
       </div>
       </div>
-      <div className="bg-[#eaf3fa] px-6 py-4 border-t border-[#cfe4f3] text-center"><span className="text-[14px] font-bold text-[#888]">月額総コスト：</span><span className="text-[28px] sm:text-[32px] font-black text-[#1773b4] ml-2" style={{"fontFamily": "\"M PLUS 1p\", sans-serif"}}>35万円</span><span className="text-[13px] text-[#888] ml-1">（別途 初期費用20万円）</span>
+      <div className="bg-[#eaf3fa] px-6 py-4 border-t border-[#cfe4f3] text-center"><span className="text-[14px] font-bold text-[#888]">月額</span><span className="text-[28px] sm:text-[32px] font-black text-[#1773b4] ml-2" style={{"fontFamily": "\"M PLUS 1p\", sans-serif"}}>35万円</span>
       </div>
       </div>
       </div>
