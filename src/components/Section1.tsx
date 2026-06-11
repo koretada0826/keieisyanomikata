@@ -620,7 +620,7 @@ export default function Section1() {
       </p>
       </div>
       </section>
-      <section className="py-16 sm:py-24 px-5 sm:px-10 bg-[#f7f7f7]">
+      <section id="pricing" className="py-16 sm:py-24 px-5 sm:px-10 bg-[#f7f7f7] scroll-mt-[80px]">
       <div className="max-w-[1240px] mx-auto">
       <div className="fade-in text-center mb-10 sm:mb-14 visible">
       <p className="inline-flex items-center gap-3 text-[11px] sm:text-[13px] text-[#1773b4] tracking-[0.3em] font-black mb-3"><span className="w-8 h-[2px] bg-[#1773b4]"></span>COST COMPARISON<span className="w-8 h-[2px] bg-[#1773b4]"></span>
