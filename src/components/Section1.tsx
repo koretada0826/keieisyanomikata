@@ -1,6 +1,7 @@
 import DiagnosisQuiz from "./DiagnosisQuiz";
 import AudioPlayer from "./AudioPlayer";
 import FAQ from "./FAQ";
+import DocumentRequestForm from "./DocumentRequestForm";
 
 export default function Section1() {
   return (
@@ -905,38 +906,7 @@ export default function Section1() {
       <p className="text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.9]">サービス概要・料金・導入事例をまとめた資料をお送りします。<br className="hidden sm:block" />下記フォームにご入力ください（所要1分）。
       </p>
       </div>
-      <form className="fade-in bg-white border border-[#e5e5e5] rounded-[16px] p-6 sm:p-10 shadow-[0_2px_12px_rgba(0,0,0,0.04)] visible">
-      <div className="space-y-4 sm:space-y-5 mb-5">
-      <div>
-      <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">お名前<span className="text-[10px] font-bold text-white bg-[#1773b4] px-1.5 py-[1px] rounded-[3px]">必須</span>
-      </label><input required placeholder="例：山田 太郎" className="w-full px-4 py-3.5 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#1773b4] focus:bg-white transition-colors placeholder:text-[#ccc]" type="text" style={{"caretColor": "transparent !important"}} />
-      </div>
-      <div>
-      <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">会社名<span className="text-[10px] font-bold text-white bg-[#1773b4] px-1.5 py-[1px] rounded-[3px]">必須</span>
-      </label><input required placeholder="例：株式会社○○○○" className="w-full px-4 py-3.5 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#1773b4] focus:bg-white transition-colors placeholder:text-[#ccc]" type="text" style={{"caretColor": "transparent !important"}} />
-      </div>
-      <div>
-      <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">部署・役職<span className="text-[10px] font-bold text-[#999] bg-[#eee] px-1.5 py-[1px] rounded-[3px]">任意</span>
-      </label><input placeholder="例：営業部 部長" className="w-full px-4 py-3.5 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#1773b4] focus:bg-white transition-colors placeholder:text-[#ccc]" type="text" style={{"caretColor": "transparent !important"}} />
-      </div>
-      <div>
-      <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">電話番号<span className="text-[10px] font-bold text-white bg-[#1773b4] px-1.5 py-[1px] rounded-[3px]">必須</span>
-      </label><input required placeholder="例：09012345678" className="w-full px-4 py-3.5 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#1773b4] focus:bg-white transition-colors placeholder:text-[#ccc]" type="tel" style={{"caretColor": "transparent !important"}} />
-      </div>
-      <div>
-      <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">メールアドレス<span className="text-[10px] font-bold text-white bg-[#1773b4] px-1.5 py-[1px] rounded-[3px]">必須</span>
-      </label><input required placeholder="例：sample@example.com" className="w-full px-4 py-3.5 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#1773b4] focus:bg-white transition-colors placeholder:text-[#ccc]" type="email" style={{"caretColor": "transparent !important"}} />
-      </div>
-      </div>
-      <div className="mb-6">
-      <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">ご質問・ご要望<span className="text-[10px] font-bold text-[#999] bg-[#eee] px-1.5 py-[1px] rounded-[3px]">任意</span>
-      </label><textarea rows={4} placeholder="導入時期・想定コール数・課題など、お気軽にご記入ください" className="w-full px-4 py-3 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#1773b4] focus:bg-white transition-colors placeholder:text-[#ccc] resize-none" style={{"caretColor": "transparent !important"}}></textarea>
-      </div>
-      <button type="submit" className="btn-accent w-full text-center cursor-pointer text-[14px]">資料を受け取る
-      </button>
-      <p className="text-[11px] text-[#999] mt-4 text-center leading-[1.7]">入力情報は資料送付・サービスのご案内にのみ使用し、第三者に提供することはありません。
-      </p>
-      </form>
+      <DocumentRequestForm />
       </div>
       </section>
       <section className="py-16 sm:py-24 px-5 sm:px-10 relative overflow-hidden" style={{"background": "linear-gradient(135deg, rgb(26, 26, 26) 0%, rgb(26, 37, 55) 50%, rgb(26, 46, 70) 100%)"}}>
