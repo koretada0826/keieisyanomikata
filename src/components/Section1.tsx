@@ -19,7 +19,7 @@ export default function Section1() {
       </p>
       <h1 className="fade-in mx-auto text-black visible" style={{"fontFamily": "\"M PLUS 1p\", \"Noto Sans JP\", sans-serif", "fontWeight": "900", "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontSize": "clamp(26px, 4.5vw, 52px)"}}>結果が出ない営業代行に<br /><span className="text-[#1773b4]">もう払わなくていい。</span>
       </h1>
-      <p className="fade-in mt-5 sm:mt-7 text-black leading-[1.5] visible" style={{"fontFamily": "\"M PLUS 1p\", \"Noto Sans JP\", sans-serif", "fontWeight": "900", "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontSize": "clamp(18px, 3vw, 30px)"}}>月<span className="text-[#1773b4]">8,800コール</span>を仕組みで回す。
+      <p className="fade-in mt-5 sm:mt-7 text-black leading-[1.5] visible" style={{"fontFamily": "\"M PLUS 1p\", \"Noto Sans JP\", sans-serif", "fontWeight": "900", "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontSize": "clamp(18px, 3vw, 30px)"}}>月<span className="text-[#1773b4]">13,200コール</span>を仕組みで回す。
       </p>
       <p className="fade-in mt-3 sm:mt-4 text-[14px] sm:text-[22px] lg:text-[26px] font-bold text-[#555] leading-[1.6] whitespace-nowrap visible">営業代行で失敗した人ほど違いが分かります。
       </p>
@@ -40,9 +40,9 @@ export default function Section1() {
       <p className="text-[13px] sm:text-[14px] leading-[1.8] mb-4 text-[#4d4d4d]">人を雇うより安く・多く・全部見える営業代行です。
       </p>
       <ul className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-x-3 gap-y-2 mb-4 sm:mb-5">
-      <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-black"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>8,800コール保証
+      <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-black"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>13,200コール保証
       </li>
-      <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-black"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>営業約2人分
+      <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-black"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>営業約3人分
       </li>
       <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-black"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>スクリプト込み
       </li>
@@ -70,7 +70,7 @@ export default function Section1() {
       </li>
       <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-white/90"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>月額35万円
       </li>
-      <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-white/90"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>8,800コール
+      <li className="flex items-center gap-2 text-[15px] sm:text-[13px] font-bold text-white/90"><span className="inline-block w-[4px] h-[4px] rounded-full bg-[#1773b4] shrink-0"></span>13,200コール
       </li>
       </ul>
       <div className="flex items-center justify-between pt-3 border-t border-white/15"><span className="text-[13px] sm:text-[15px] font-black">経験者向けに見る</span><span className="inline-flex items-center justify-center w-[38px] h-[38px] rounded-full transition-all duration-300 bg-[#1773b4] text-white group-hover:scale-110"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden={true}><path d="M3 9 H14 M10 5 L14 9 L10 13" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"></path></svg></span>
@@ -85,11 +85,11 @@ export default function Section1() {
       <div id="service-intro" className="fade-in text-center mb-2 scroll-mt-[80px] visible">
       <p className="text-[22px] sm:text-[28px] lg:text-[32px] font-black text-[#1773b4] leading-[1.3] mb-3">経営者のミカタは
       </p>
-      <p className="text-[18px] sm:text-[22px] lg:text-[26px] font-bold text-black leading-[1.6]"><span className="inline-block bg-[#1773b4] text-white px-3 py-1 rounded-[6px] text-[16px] sm:text-[20px] font-bold mr-1">トークツリー設計</span>から<span className="inline-block bg-[#1773b4] text-white px-3 py-1 rounded-[6px] text-[16px] sm:text-[20px] font-bold mx-1">8,800コール実行</span>まで行う
+      <p className="text-[18px] sm:text-[22px] lg:text-[26px] font-bold text-black leading-[1.6]"><span className="inline-block bg-[#1773b4] text-white px-3 py-1 rounded-[6px] text-[16px] sm:text-[20px] font-bold mr-1">トークツリー設計</span>から<span className="inline-block bg-[#1773b4] text-white px-3 py-1 rounded-[6px] text-[16px] sm:text-[20px] font-bold mx-1">13,200コール実行</span>まで行う
       </p>
       <p className="text-[26px] sm:text-[34px] lg:text-[40px] font-black text-black leading-[1.3] mt-2">「営業代行サービス」
       </p>
-      <p className="text-[14px] sm:text-[16px] text-[#888] mt-2">※人で換算すると約2人分<br />（人の場合：200コール/日 × 22日 = 約4,400コール）
+      <p className="text-[14px] sm:text-[16px] text-[#888] mt-2">※人で換算すると約3人分<br />（人の場合：200コール/日 × 22日 = 約4,400コール）
       </p>
       </div>
       <section className="bg-white pt-4 pb-10 px-4 overflow-hidden relative"><svg width="0" height="0" aria-hidden={true} style={{"position": "absolute"}}><defs><filter id="knockout-black" colorInterpolationFilters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0
@@ -299,7 +299,7 @@ export default function Section1() {
       </div>
       <div className="px-2 sm:px-6 py-2 sm:py-5 border-l border-[#eee] flex items-center justify-center text-center bg-white"><span className="text-[11px] sm:text-[15px] text-[#888] leading-[1.3]">月500〜1,000件</span>
       </div>
-      <div className="px-2 sm:px-6 py-2 sm:py-5 border-l border-[#cfe4f3] bg-[#eaf3fa] flex items-center justify-center text-center gap-1 sm:gap-2"><svg className="shrink-0 w-3 h-3 sm:w-4 sm:h-4 text-[#1773b4]" viewBox="0 0 16 16" fill="none" aria-hidden={true}><path d="M3 8 L7 12 L13 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path></svg><span className="text-[11px] sm:text-[15px] lg:text-[17px] font-black text-[#1773b4] leading-[1.3]">月8,800コール（約2人分）</span>
+      <div className="px-2 sm:px-6 py-2 sm:py-5 border-l border-[#cfe4f3] bg-[#eaf3fa] flex items-center justify-center text-center gap-1 sm:gap-2"><svg className="shrink-0 w-3 h-3 sm:w-4 sm:h-4 text-[#1773b4]" viewBox="0 0 16 16" fill="none" aria-hidden={true}><path d="M3 8 L7 12 L13 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path></svg><span className="text-[11px] sm:text-[15px] lg:text-[17px] font-black text-[#1773b4] leading-[1.3]">月13,200コール（約3人分）</span>
       </div>
       </div>
       <div className="grid grid-cols-[1.1fr_1fr_1.3fr] items-stretch border-b border-[#eee]">
@@ -359,7 +359,7 @@ export default function Section1() {
       </p>
       <p className="text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium"><span className="font-black text-black">15年以上の営業実績を持つチームが、現場ベースでトーク設計</span>しています。
       </p>
-      <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">現場で鍛え上げたトークツリー・KPI・改善ロジックに、AIの実行力と分析力を乗せる。<br />月間8,800コール——人で換算すると約2人分。
+      <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">現場で鍛え上げたトークツリー・KPI・改善ロジックに、AIの実行力と分析力を乗せる。<br />月間13,200コール——人で換算すると約3人分。
       </p>
       <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">「人が設計し、AIが動かし、人が磨く」—— この順番でしか、売れる営業は再現できません。
       </p>
@@ -506,12 +506,12 @@ export default function Section1() {
       <h3 className="relative text-[22px] sm:text-[26px] lg:text-[28px] font-black text-black leading-[1.3] mb-4 whitespace-normal sm:whitespace-pre-line">離職なし
       感情ブレなし
       </h3>
-      <p className="relative text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.9] mb-5 flex-1">離職なし・教育不要・感情ブレなし・パフォーマンス一定。止まらず、忠実に、∞に稼働し続けます。月間8,800コール、人で換算すると約2人分。
+      <p className="relative text-[14px] sm:text-[15px] text-[#4d4d4d] leading-[1.9] mb-5 flex-1">離職なし・教育不要・感情ブレなし・パフォーマンス一定。止まらず、忠実に、∞に稼働し続けます。月間13,200コール、人で換算すると約3人分。
       </p>
       <div className="relative border-t border-[#eee] pt-4">
       <div className="flex items-baseline gap-2 mb-1"><span className="text-[11px] text-[#999] font-bold tracking-[0.1em]">経営者のミカタの稼働量</span>
       </div>
-      <p className="text-[26px] sm:text-[30px] font-black text-[#1773b4] leading-none mb-1" style={{"fontFamily": "\"M PLUS 1p\", sans-serif"}}>8,800コール/月
+      <p className="text-[26px] sm:text-[30px] font-black text-[#1773b4] leading-none mb-1" style={{"fontFamily": "\"M PLUS 1p\", sans-serif"}}>13,200コール/月
       </p>
       <p className="text-[11px] text-[#888] leading-[1.6]">※人の場合：200コール/日 × 22日 = 約4,400コール
       </p>
@@ -779,7 +779,7 @@ export default function Section1() {
       <h3 className="text-[19px] sm:text-[22px] font-bold text-[#333] mb-4 leading-[1.4]">コール開始
       </h3>
       <p className="text-[14px] sm:text-[16px] text-[#666] leading-[1.8] m-0 whitespace-pre-line">契約後最短5営業日でコール開始。
-      専任チームが月間8,800コールを実行します。
+      専任チームが月間13,200コールを実行します。
       </p>
       </div>
       </div>
