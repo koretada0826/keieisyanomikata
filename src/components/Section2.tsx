@@ -5,11 +5,13 @@ export default function Section2() {
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-8">
             <div>
-              <img
-                alt="経営者のミカタ"
-                className="h-[40px] sm:h-[48px] w-auto mb-1"
-                src="/img/logo.png"
-              />
+              <a href="https://bright-information.com/" target="_blank" rel="noopener noreferrer" className="inline-block no-underline">
+                <img
+                  alt="経営者のミカタ"
+                  className="h-[40px] sm:h-[48px] w-auto mb-1"
+                  src="/img/logo.png"
+                />
+              </a>
               <a
                 href="https://bright-information.com/"
                 target="_blank"

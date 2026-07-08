@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-[#e5e5e5]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 h-[64px] sm:h-[72px] flex items-center justify-between">
-        <a href="#" className="flex items-center no-underline">
+        <a href="https://bright-information.com/" target="_blank" rel="noopener noreferrer" className="flex items-center no-underline">
           <img
             alt="経営者のミカタ"
             src="/img/logo.png"
