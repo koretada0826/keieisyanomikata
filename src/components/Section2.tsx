@@ -10,7 +10,14 @@ export default function Section2() {
                 className="h-[40px] sm:h-[48px] w-auto mb-1"
                 src="/img/logo.png"
               />
-              <p className="text-[12px] text-[#666]">株式会社Bright</p>
+              <a
+                href="https://bright-information.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[12px] text-[#666] no-underline hover:text-black transition-colors"
+              >
+                株式会社Bright
+              </a>
             </div>
             <nav className="flex flex-wrap gap-5">
               <a
