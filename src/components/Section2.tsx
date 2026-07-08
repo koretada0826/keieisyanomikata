@@ -16,7 +16,7 @@ export default function Section2() {
                 href="https://bright-information.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[12px] text-[#666] no-underline hover:text-black transition-colors"
+                className="block text-[12px] text-[#666] no-underline hover:text-black transition-colors"
               >
                 株式会社Bright
               </a>
